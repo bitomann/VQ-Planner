@@ -5,7 +5,7 @@ import Home from "./home/Home";
 // import Login from "./auth/Login";
 // vvv Exercises vvv //
 import ExerciseCard from "./exercises/ExerciseCard";
-// import ExerciseList from "../components/exercise/ExerciseList";
+import ExerciseList from "./exercises/ExercisesList";
 // import ExerciseDetail from "../components/exercise/ExerciseDetail";
 // import ExerciseForm from "../components/exercise/ExerciseForm";
 // import ExerciseEditForm from "../components/exercise/ExerciseEditForm";
@@ -40,14 +40,15 @@ const ApplicationViews = () => {
       <Route path="/exercises" render={props => {
           return <ExerciseCard />;
       }}
-    //   {/* vvv Without the 'exact' keyword, the second route would also handle /exercises/:exerciseId vvv  
-    //   {/* <Route exact path="/exercises" render={props => {
-    //     if (hasUser) {
-    //     return <ExerciseList {...props} />
-    //     } else {
-    //     return <Redirect to="/login" />
-    //     }
-    // }}  
+       />
+    {/*  vvv Without the 'exact' keyword, the second route would also handle /exercises/:exerciseId vvv   */}
+      <Route exact path="/exercises" render={props => {
+        // if (hasUser) {
+        return <ExerciseList {...props} />
+        // } else {
+        // return <Redirect to="/login" />
+        // }
+    }}  
       />
       {/* <Route path="/exercises/:exerciseId(\d+)/edit" render={props => {
         if (hasUser) {

@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-// import { firstLetterCase } from '../helpers'
+import { firstLetterCase } from '../../modules/Helpers'
 import "./ExerciseCard.css";
 
 const ExerciseCard = props => {
@@ -14,6 +14,7 @@ const ExerciseCard = props => {
           <img src={require(`../images/muscle-icon.svg`)} alt="Flexing Arm" />
         </picture>
         {/* vvv pulls in props from ExerciseList vvv */}
+            {/* TODO: vvv figure out why 'exercise' is undefined */}
         <h3 className="name">Name: <span className="card-exerciseName">
           {/* {firstLetterCase(props.exercise.name)} */}
         </span></h3>
