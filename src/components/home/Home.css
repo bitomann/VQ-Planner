@@ -1,0 +1,15 @@
+body {
+    position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/Screenshot 2020-02-28 11.03.05.png');
+  /* opacity: 50%; */
+  background-color: black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 700px;
+  background-position: center;
+  z-index: -1;
+}
