@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-// import { firstLetterCase } from '../helpers'
+import { firstLetterCase } from '../../modules/Helpers'
 import "./ExerciseCard.css";
 
 const ExerciseCard = props => {

@@ -1,8 +1,6 @@
 /* Import the google web fonts you want to use */
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
 
-/*Typography
---------------------------------------------------------------*/
 body,
 button,
 input,
@@ -41,8 +39,9 @@ strong {
 
 img {
   display: block;
+  padding: 0.5%;
   border: 0;
-  width: 25%;
+  width: 15%;
   height: auto;
 }
 
