@@ -3,7 +3,7 @@ import React from "react";
 // import { firstLetterCase } from '../helpers'
 import "./ExerciseCard.css";
 
-const ExerciseCard = (props) => {
+const ExerciseCard = props => {
   return (
     <div className="card">
       <div className="card-content">
