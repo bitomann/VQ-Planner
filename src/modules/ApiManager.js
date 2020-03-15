@@ -19,13 +19,12 @@ export default {
     getAllWithUserNamesAndId(tableName, userId) {
         return fetch(`${remoteURL}/${tableName}?_expand=user`).then(result => result.json(userId))
     },
-
     delete(tableName, id) {
         // This fetch call grabs the id of a single object and deletes it from tableName. 
         return fetch(`${remoteURL}/${tableName}/${id}`, {
             method: "DELETE"
         })
-            // .then(result => result.json())
+            .then(result => result.json())
     },
     // This fetch call posts a new object to tableName.  
     post(tableName, newExercise) {

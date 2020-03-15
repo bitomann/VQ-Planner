@@ -1,71 +1,71 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "userName": "Shania",
-        "password": "123"
-      },
-      {
-        "id": 1,
-        "userName": "OT",
-        "password": "123"
-      }
-    ],
-    "exercises": [
-      {
-        "id": 1,
-        "userId": 1,
-        "name": "Merkin",
-        "type": "Chest",
-        "Description": "The definition of a push-up is an exercise done laying with face, palms and toes facing down, keeping legs and back straight, extending arms straight to push body up and back down again. An example of a push-up is a great exercise that works the chest, shoulder and arm muscles."
-      },
-      {
-        "id": 2,
-        "userId": 1,
-        "name": "American Hammer",
-        "type": "Mary",
-        "Description": "A more appropriate name for the former Russian Twist. Rocky did beat the Russian in the movie. Sounds tougher too..."
-      },
-      {
-        "id": 3,
-        "userId": 1,
-        "name": "Sumo Squat",
-        "type": "Legs",
-        "Description": "Feet in wide stance (like a sumo wrestler), squat down and touch ground with both hands. For added fun can add sumo sounds and sumo leg lift between each rep. Also done by some groups as a jump squat with the same touch of the ground."
-      }
-    ],
-    "routineExercises": [
-      {
-        "id": 1,
-        "exerciseId": 1,
-        "routineId": 1
-      },
-      {
-        "id": 2,
-        "exerciseId": 2,
-        "routineId": 2
-      },
-      {
-        "id": 4,
-        "exerciseId": 3,
-        "routineId": 3
-      }
-    ],
-    "routines": [
-      {
-        "id": 1,
-        "userId": 1,
-        "name": "The Hell Yeah Routine"
-      },
-      {
-        "id": 2,
-        "userId": 1,
-        "name": "Chet Soda Jerker"
-      },
-      {
-        "id": 3,
-        "userId": 1,
-        "name": "Doc Ock's Octogon of Pain"
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "userName": "Shania",
+      "password": "123"
+    },
+    {
+      "id": 1,
+      "userName": "OT",
+      "password": "123"
+    }
+  ],
+  "exercises": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Merkin",
+      "type": "Chest",
+      "description": "The definition of a push-up is an exercise done laying with face, palms and toes facing down, keeping legs and back straight, extending arms straight to push body up and back down again. An example of a push-up is a great exercise that works the chest, shoulder and arm muscles."
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "American Hammer",
+      "type": "Mary",
+      "description": "A more appropriate name for the former Russian Twist. Rocky did beat the Russian in the movie. Sounds tougher too..."
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "name": "Sumo Squat",
+      "type": "Legs",
+      "description": "Feet in wide stance (like a sumo wrestler), squat down and touch ground with both hands. For added fun can add sumo sounds and sumo leg lift between each rep. Also done by some groups as a jump squat with the same touch of the ground."
+    }
+  ],
+  "routineExercises": [
+    {
+      "id": 1,
+      "exerciseId": 1,
+      "routineId": 1
+    },
+    {
+      "id": 2,
+      "exerciseId": 2,
+      "routineId": 2
+    },
+    {
+      "id": 4,
+      "exerciseId": 3,
+      "routineId": 3
+    }
+  ],
+  "routines": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "The Hell Yeah Routine"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "Chet Soda Jerker"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "name": "Doc Ock's Octogon of Pain"
+    }
+  ]
+}

@@ -3,8 +3,10 @@ import React from "react";
 import { firstLetterCase } from '../../modules/Helpers'
 import "./ExerciseCard.css";
 
+
 const ExerciseCard = props => {
-  return (
+  
+    return (
     <div className="card">
       <div className="card-content">
         <picture>
@@ -14,14 +16,12 @@ const ExerciseCard = props => {
           <img src={require(`../images/muscle-icon.svg`)} alt="Flexing Arm" />
         </picture>
         {/* vvv pulls in props from ExerciseList vvv */}
-            {/* TODO: vvv figure out why 'exercise' is undefined */}
         <h3 className="name">Name: <span className="card-exerciseName">
-          {/* {firstLetterCase(props.exercise.name)} */}
+          {firstLetterCase(props.exercise.name)}
         </span></h3>
+        {/* <p>Description: Click details for a closer look...</p> */}
         <p>Description: Click details for a closer look...</p>
-        <p>Type: muscle group</p>
-        {/* <p>Type: {firstLetterCase(props.exercise.type)}</p> */}
-        {/* <p>Type: {props.exercise.type}</p> */}
+        <p>Type: {firstLetterCase(props.exercise.type)}</p>
         {/* <Link to={`/exercises/${props.exercise.id}`}> */}
         <button>Details</button>
         {/* </Link> */}
