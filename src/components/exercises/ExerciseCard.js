@@ -20,7 +20,7 @@ const ExerciseCard = props => {
           {firstLetterCase(props.exercise.name)}
         </span></h3>
         {/* <p>Description: Click details for a closer look...</p> */}
-        <h5>Description: Click details for a closer look...</h5>
+        {/* <h5>Description: Click details for a closer look...</h5> */}
         <h5>Type: {firstLetterCase(props.exercise.type)}</h5>
         <Link to={`/exercises/${props.exercise.id}`}>
         <button>Details</button>
