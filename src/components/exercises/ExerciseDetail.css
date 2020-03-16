@@ -1,0 +1,21 @@
+#root > .card {
+    max-width: 400px;
+    margin: 10px auto;
+    color: #c9c9c9;
+  }
+
+  h3, h5 {
+    font-family: 'Stardos Stencil', cursive;
+    /* font-family: 'Allerta Stencil', sans-serif; */
+    letter-spacing: 2px;
+    color: #c9c9c9
+}
+
+button:hover {
+    background-color: black;
+}
+
+  button:disabled, 
+  button:disabled:hover {
+  background-color: black;
+}

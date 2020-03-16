@@ -33,6 +33,7 @@ small {
     color: black;
     text-decoration: underline;
     cursor: pointer;
+    text-decoration: none
   }
   
   .nav-link:hover {
