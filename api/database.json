@@ -32,6 +32,12 @@
       "name": "Sumo Squat",
       "type": "Legs",
       "description": "Feet in wide stance (like a sumo wrestler), squat down and touch ground with both hands. For added fun can add sumo sounds and sumo leg lift between each rep. Also done by some groups as a jump squat with the same touch of the ground."
+    },
+    {
+      "name": "The Peoples Chair",
+      "type": "legs",
+      "description": "wall sits",
+      "id": 4
     }
   ],
   "routineExercises": [

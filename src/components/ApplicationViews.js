@@ -6,8 +6,8 @@ import Home from "./home/Home";
 // vvv Exercises vvv //
 import ExerciseCard from "./exercises/ExerciseCard";
 import ExerciseList from "./exercises/ExercisesList";
-// import ExerciseDetail from "../components/exercise/ExerciseDetail";
-// import ExerciseForm from "../components/exercise/ExerciseForm";
+import ExerciseDetail from "../components/exercises/ExerciseDetail";
+import ExerciseForm from "../components/exercises/ExerciseForm";
 // import ExerciseEditForm from "../components/exercise/ExerciseEditForm";
 
 // vvv Routines vvv //
@@ -50,24 +50,25 @@ const ApplicationViews = () => {
         // }
     }}  
       />
+      <Route exact path="/exercises/:exerciseId(\d+)" render={props => {
+        // if (hasUser) {
+            // vvv The 'spread operator {...props}' copies all 'props' onto the component's props. vvv
+        return <ExerciseDetail exerciseId={parseInt(props.match.params.exerciseId)} {...props} />
+    //   } else {
+        // return <Redirect to="/login" />
+    //   }
+    }}
+      />
+      <Route path="/exercises/new" render={(props) => {
+        return <ExerciseForm {...props} />
+    }}
+      />           
       {/* <Route path="/exercises/:exerciseId(\d+)/edit" render={props => {
         if (hasUser) {
         return <ExerciseEditForm {...props} />
       } else {
         return <Redirect to="/login" />
       }
-    }}
-      /> */}
-      {/* <Route exact path="/exercises/:exerciseId(\d+)" render={props => {
-        if (hasUser) {
-        return <ExerciseDetail exerciseId={parseInt(props.match.params.exerciseId)} {...props} />
-      } else {
-        return <Redirect to="/login" />
-      }
-    }}
-      /> */}
-      {/* <Route path="/exercises/new" render={(props) => {
-        return <ExerciseForm {...props} />
     }}
       /> */}
 

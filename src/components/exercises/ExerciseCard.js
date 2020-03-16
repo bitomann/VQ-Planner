@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { firstLetterCase } from '../../modules/Helpers'
 import "./ExerciseCard.css";
 
@@ -20,11 +20,11 @@ const ExerciseCard = props => {
           {firstLetterCase(props.exercise.name)}
         </span></h3>
         {/* <p>Description: Click details for a closer look...</p> */}
-        <p>Description: Click details for a closer look...</p>
-        <p>Type: {firstLetterCase(props.exercise.type)}</p>
-        {/* <Link to={`/exercises/${props.exercise.id}`}> */}
+        <h5>Description: Click details for a closer look...</h5>
+        <h5>Type: {firstLetterCase(props.exercise.type)}</h5>
+        <Link to={`/exercises/${props.exercise.id}`}>
         <button>Details</button>
-        {/* </Link> */}
+        </Link>
         <button type="button" onClick={() => props.history.push(`/exercises/${props.exercise.id}/edit`)}>
         Edit
         </button>
