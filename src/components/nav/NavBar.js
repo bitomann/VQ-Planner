@@ -1,10 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
-// import { withRouter, Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import './NavBar.css'
 
-const NavBar = () => {
-
+const NavBar = props => {
+    // const activeUser = sessionStorage.getItem("Active Id")
+    const clearUser = () => {
+        sessionStorage.clear();
+    }
+  
   return (
     <header>
       <nav>
@@ -14,25 +18,42 @@ const NavBar = () => {
               Home
             </Link>
           </li>
+          {/* {props.hasUser 
+            ? */}
           <li>
             <Link className="nav-link" to="/exercises">
             Exercises
             </Link>
           </li>
+           {/* : null}  */}
+          {props.hasUser
+            ? 
           <li>
             {/* <Link className="nav-link" to="/routines"> */}
               Routines
             {/* </Link> */}
           </li>
+          : null}
+          {props.hasUser
+            ? 
           <li>
             {/* <Link className="nav-link" to="/profiles"> */}
               Profile
             {/* </Link> */}
           </li>
+          : null} 
+          {props.hasUser
+            ?
           <li>
-            {/* <Link className="nav-link" onClick={clearUser} to="/ "> */}
-              Log Out
-            {/* </Link> */}
+            <Link className="nav-link" onClick={clearUser} to="/ ">
+              Logout
+            </Link>
+          </li>
+          : null}
+          <li>
+              <Link className="nav-link" to="/login">
+              Login
+              </Link>
           </li>
         </ul>
       </nav>
@@ -40,34 +61,5 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
-// export default withRouter(NavBar);
-
-
-
-
-//   const activeUser = sessionStorage.getItem("Active Id")
-//   const clearUser = () => {
-//     sessionStorage.clear();
-//     }
-  
-//   if (activeUser === null) {
-//     return (
-//       <header>
-//       <nav>
-//         <ul>
-//           <li>
-//             <Link className="nav-link" to="/register">
-//               Register
-//             </Link>
-//           </li>
-//           <li>
-//             <Link className="nav-link" to="/login">
-//               Log In
-//             </Link>
-//           </li>
-//         </ul>
-//       </nav>
-//     </header>
-//     );
-//   } else {
+// export default NavBar;
+export default withRouter(NavBar);

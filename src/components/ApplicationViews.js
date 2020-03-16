@@ -3,6 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
 import Login from "../components/auth/Login";
+import Register from "./auth/Register";
 // vvv Exercises vvv //
 // import ExerciseCard from "./exercises/ExerciseCard";
 import ExerciseList from "./exercises/ExercisesList";
@@ -20,33 +21,30 @@ import ExerciseEditForm from "../components/exercises/ExerciseEditForm";
 
 
 // vvv routes each listed component to the proper URL to be displayed vvv // 
-const ApplicationViews = () => {
-    const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
-//   const hasUser = props.hasUser;
-//   const setUser = props.setUser;
+const ApplicationViews = props => {
+  const hasUser = props.hasUser;
+  const setUser = props.setUser;
 
   return (
     <>
     {/* Home */}
       <Route exact path="/" render={props => {
-          return <Home /> ;
+        return <Home /> ;
     }}
       />
-      {/* Login */}
+    {/* Register */}
+      <Route path="/register" render={props => {
+            return <Register {...props} />
+        }}/>
+    {/* Login */}
       <Route path="/login" render={props => {
-    return <Login {...props} />
-    // return <Login setUser={setUser} {...props} />
+        return <Login setUser={setUser} {...props} />
   }} />
       
-      {/* Exercises */}
-      {/* <Route  path="/exercises" render={props => {
-          return <ExerciseCard {...props}/>;
-      }}
-       /> */}
+    {/* Exercises */}
     {/*  vvv Without the 'exact' keyword, the second route would also handle /exercises/:exerciseId vvv   */}
       <Route exact path="/exercises" render={props => {
-        if (isAuthenticated()) {
-        // if (hasUser) {
+        if (hasUser) {
         return <ExerciseList {...props} />
         } else {
         return <Redirect to="/login" />
@@ -54,12 +52,12 @@ const ApplicationViews = () => {
     }}  
       />
       <Route exact path="/exercises/:exerciseId(\d+)" render={props => {
-        // if (hasUser) {
+        if (hasUser) {
             // vvv The 'spread operator {...props}' copies all 'props' onto the component's props. vvv
         return <ExerciseDetail exerciseId={parseInt(props.match.params.exerciseId)} {...props} />
-    //   } else {
-        // return <Redirect to="/login" />
-    //   }
+      } else {
+        return <Redirect to="/login" />
+      }
     }}
       />
       <Route path="/exercises/new" render={(props) => {
@@ -67,8 +65,7 @@ const ApplicationViews = () => {
     }}
       />           
       <Route path="/exercises/:exerciseId(\d+)/edit" render={props => {
-        if (isAuthenticated()) {
-        // if (hasUser) {
+        if (hasUser) {
         return <ExerciseEditForm {...props} />
       } else {
         return <Redirect to="/login" />
