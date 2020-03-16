@@ -1,10 +1,10 @@
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 // import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
-// import Login from "./auth/Login";
+import Login from "../components/auth/Login";
 // vvv Exercises vvv //
-import ExerciseCard from "./exercises/ExerciseCard";
+// import ExerciseCard from "./exercises/ExerciseCard";
 import ExerciseList from "./exercises/ExercisesList";
 import ExerciseDetail from "../components/exercises/ExerciseDetail";
 import ExerciseForm from "../components/exercises/ExerciseForm";
@@ -21,6 +21,7 @@ import ExerciseForm from "../components/exercises/ExerciseForm";
 
 // vvv routes each listed component to the proper URL to be displayed vvv // 
 const ApplicationViews = () => {
+    const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 //   const hasUser = props.hasUser;
 //   const setUser = props.setUser;
 
@@ -32,9 +33,10 @@ const ApplicationViews = () => {
     }}
       />
       {/* Login */}
-      {/* <Route path="/login" render={props => {
-    return <Login setUser={setUser} {...props} />
-  }} /> */}
+      <Route path="/login" render={props => {
+    return <Login {...props} />
+    // return <Login setUser={setUser} {...props} />
+  }} />
       
       {/* Exercises */}
       {/* <Route  path="/exercises" render={props => {
@@ -43,11 +45,12 @@ const ApplicationViews = () => {
        /> */}
     {/*  vvv Without the 'exact' keyword, the second route would also handle /exercises/:exerciseId vvv   */}
       <Route exact path="/exercises" render={props => {
+        if (isAuthenticated()) {
         // if (hasUser) {
         return <ExerciseList {...props} />
-        // } else {
-        // return <Redirect to="/login" />
-        // }
+        } else {
+        return <Redirect to="/login" />
+        }
     }}  
       />
       <Route exact path="/exercises/:exerciseId(\d+)" render={props => {
