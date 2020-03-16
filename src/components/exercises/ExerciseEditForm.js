@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import ApiManager from '../../modules/ApiManager';
-import './ExerciseForm.css'
+import React, { useState, useEffect } from "react";
+import ApiManager from "../../modules/ApiManager";
+import "../exercises/ExerciseForm.css";
 
-const ExerciseForm = props => {
+const ExerciseEditForm = props => {
   const [exercise, setExercise] = useState({ name: "", type: "", description: "" });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -12,34 +12,45 @@ const ExerciseForm = props => {
     setExercise(stateToChange);
   };
 
-  /*  Local method for validation, set loadingStatus, create exercise 
-  object, invoke the ApiManager post method, and redirect to the full exercise list */
-  const constructNewExercise = evt => {
-    evt.preventDefault();
-    if (exercise.name === "" || exercise.type === "") {
-      window.alert("Please input an Exercise Name, type, and Description");
-    } else {
-      setIsLoading(true);
-      // Create the exercise and redirect user to exercise list to see all exercises including new one
-      ApiManager.post("exercises", exercise)
-        .then(() => props.history.push("/exercises"));
-    }
-  };
+  const updateExistingExercise = evt => {
+    evt.preventDefault()
+    setIsLoading(true);
+
+    // Need the id for 'edit'!
+    const editedExercise = {
+      id: props.match.params.exerciseId,
+      name: exercise.name,
+      type: exercise.type,
+      description: exercise.description
+    };
+
+    ApiManager.update("exercises", editedExercise)
+      .then(() => props.history.push("/exercises"))
+  }
+
+  useEffect(() => {
+    ApiManager.getOne("exercises", props.match.params.exerciseId)
+      .then(exercise => {
+        setExercise(exercise);
+        setIsLoading(false);
+      });
+  }, [props.match.params.exerciseId]);
 
   return (
     <>
       <form>
         <fieldset>
           <div className="formgrid">
-            <label htmlFor="exerciseName">Name :</label>
+            <label htmlFor="name">Name :</label>
             <input
               type="text"
               required
+              className="form-control"
               onChange={handleFieldChange}
               id="name"
-              placeholder="exercise name"
+              value={exercise.name}
             />
-            
+
             <label htmlFor="type">Type :</label>
             <select
               type="text"
@@ -47,6 +58,7 @@ const ExerciseForm = props => {
               onChange={handleFieldChange}
               id="type"
               placeholder="type"
+            //   disabled="true"
             > 
             <option value="chest">chest</option>
             <option value="back">back</option>
@@ -55,27 +67,27 @@ const ExerciseForm = props => {
             <option value="legs">legs</option>
             <option value="fullBody">full body</option>
             </select>
-            
-            <label htmlFor="type">Description :</label>
-            <textarea rows="2" cols="50"
-              type="textarea"
+
+            <label htmlFor="description">Description :</label>
+            <textarea rows="4" cols="50"
               required
+              className="form-control"
               onChange={handleFieldChange}
-              id="description"
-              placeholder="description"
+              id="type"
+              value={exercise.type}
             />
           </div>
           <div className="alignRight">
             <button
-              type="button"
-              disabled={isLoading}
-              onClick={constructNewExercise}
+              type="button" disabled={isLoading}
+              onClick={updateExistingExercise}
+              className="btn btn-primary"
             >Submit</button>
           </div>
         </fieldset>
       </form>
     </>
   );
-};
+}
 
-export default ExerciseForm
+export default ExerciseEditForm

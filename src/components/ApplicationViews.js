@@ -8,7 +8,7 @@ import Login from "../components/auth/Login";
 import ExerciseList from "./exercises/ExercisesList";
 import ExerciseDetail from "../components/exercises/ExerciseDetail";
 import ExerciseForm from "../components/exercises/ExerciseForm";
-// import ExerciseEditForm from "../components/exercise/ExerciseEditForm";
+import ExerciseEditForm from "../components/exercises/ExerciseEditForm";
 
 // vvv Routines vvv //
 // import RoutineList from "../components/Routine/RoutineList";
@@ -66,14 +66,15 @@ const ApplicationViews = () => {
         return <ExerciseForm {...props} />
     }}
       />           
-      {/* <Route path="/exercises/:exerciseId(\d+)/edit" render={props => {
-        if (hasUser) {
+      <Route path="/exercises/:exerciseId(\d+)/edit" render={props => {
+        if (isAuthenticated()) {
+        // if (hasUser) {
         return <ExerciseEditForm {...props} />
       } else {
         return <Redirect to="/login" />
       }
     }}
-      /> */}
+      />
 
       {/* Routines */}
       {/* <Route exact path="/routines" render={props => {
