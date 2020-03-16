@@ -9,7 +9,14 @@ body {
   background-color: black;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 700px;
+  background-size: 375px;
   background-position: center;
   z-index: -1;
+}
+
+.centerMe {
+    color: #c9c9c9;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
 }

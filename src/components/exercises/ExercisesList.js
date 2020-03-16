@@ -13,7 +13,7 @@ const ExerciseList = props => {
   // The initial state is an empty array //
   const [exercises, setExercises] = useState([]);
   console.log("inside useState()")
-  //  Hooks begin with 'use' useXXX //
+  //  Hooks start with "use...", 'useState' and 'useEffect' = React Hooks //
 
   const getExercises = () => {
     // After the data comes back from the API, I
@@ -23,9 +23,14 @@ const ExerciseList = props => {
       setExercises(ExercisesFromAPI)
     });
   };
-
+    // vvv Flow of delete  = Click the discharge button
+    // Invoke handleDelete function which will invoke the ApiManager delete function; pass the id.
+    // Once an item is deleted, invoke the ApiManager getAll() method.
+    // With the new data, invokes setExercises() and set exercises equal to the new data.
+    // The component re-renders to display the new exercise data.
+    // <ExerciseList> render maps over the data and re-displays cards for each exercise. vvv
   const deleteExercise = id => {
-    ApiManager.delete(id)
+    ApiManager.delete("exercises", id)
       .then(() => ApiManager.getAll("exercises").then(setExercises));
   };
 
@@ -53,13 +58,19 @@ console.log("About to return JSX", exercises);
       <button type="button"
       className="btn"
       onClick={() => {props.history.push("/exercises/new")}}>
-      New
+      Add New
       </button>
     </section>
     
     <div className="container-cards">
+{/* vvv Using the array method '.map', for each item/exercise in the array 'exercises',
+return an <ExerciseCard /> with a reference to the single item/exercise. 
+This reference is now a property on the <ExerciseCard /> and is referred to as props. vvv */}
       {exercises.map(exercise =>
+// vvv Because <ExerciseCard /> is included in the render method of <ExerciseList />, it is a child 
+// component of the <ExerciseList /> component. vvv
         <ExerciseCard
+ //  vvv The 'key' is how React keeps track of re-rendering only the things that have changed. vvv
           key={exercise.id}
           exercise={exercise}
           deleteExercise={deleteExercise}

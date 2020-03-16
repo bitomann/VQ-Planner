@@ -37,10 +37,10 @@ const ApplicationViews = () => {
   }} /> */}
       
       {/* Exercises */}
-      <Route path="/exercises" render={props => {
-          return <ExerciseCard />;
+      {/* <Route  path="/exercises" render={props => {
+          return <ExerciseCard {...props}/>;
       }}
-       />
+       /> */}
     {/*  vvv Without the 'exact' keyword, the second route would also handle /exercises/:exerciseId vvv   */}
       <Route exact path="/exercises" render={props => {
         // if (hasUser) {
