@@ -6,9 +6,19 @@
       "password": "123"
     },
     {
-      "id": 1,
-      "userName": "OT",
-      "password": "123"
+      "userName": "bito",
+      "password": "1",
+      "id": 2
+    },
+    {
+      "userName": "ot",
+      "password": "2",
+      "id": 3
+    },
+    {
+      "userName": "bitomann",
+      "password": "1",
+      "id": 4
     }
   ],
   "exercises": [
