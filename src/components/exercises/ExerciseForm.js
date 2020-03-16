@@ -39,6 +39,7 @@ const ExerciseForm = props => {
               placeholder="exercise name"
             />
             <label htmlFor="exerciseName">Name :</label>
+
             <select
               type="text"
               required
@@ -52,7 +53,6 @@ const ExerciseForm = props => {
             <option value="arms">arms</option>
             <option value="legs">legs</option>
             <option value="fullBody">full body</option>
-            <label htmlFor="type">type :</label>
             </select>
             <label htmlFor="type">Type :</label>
             <input
