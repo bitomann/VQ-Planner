@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// import { Link } from "react-router-dom";
 import ApiManager from '../../modules/ApiManager';
 import './ExerciseDetail.css'
 import {firstLetterCase} from '../../modules/Helpers'
@@ -41,6 +42,11 @@ ApiManager.delete("exercises", props.exerciseId)
         <h3>Name: <span style={{ color: '#898989' }}>{firstLetterCase(exercise.name)}</span></h3>
         <h5>Type: {firstLetterCase(exercise.type)}</h5>
         <h5>Description: {firstLetterCase(exercise.description)}</h5>
+        {/* <Link> */}
+        <button type="button" onClick={() => props.history.push(`/exercises/${props.exercise.id}/edit`)}>
+        Edit
+        </button>
+        {/* </Link> */}
         <button type="button" disabled={isLoading} onClick={handleDelete}>
         Delete
         </button>
