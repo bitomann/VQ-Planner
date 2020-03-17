@@ -29,9 +29,8 @@
   "exercises": [
     {
       "id": 1,
-      "userId": 1,
-      "name": "Merkin",
-      "type": "Chest",
+      "name": "Merkins",
+      "type": "back",
       "description": "The definition of a push-up is an exercise done laying with face, palms and toes facing down, keeping legs and back straight, extending arms straight to push body up and back down again. An example of a push-up is a great exercise that works the chest, shoulder and arm muscles."
     },
     {
@@ -47,12 +46,6 @@
       "name": "Sumo Squat",
       "type": "Legs",
       "description": "Feet in wide stance (like a sumo wrestler), squat down and touch ground with both hands. For added fun can add sumo sounds and sumo leg lift between each rep. Also done by some groups as a jump squat with the same touch of the ground."
-    },
-    {
-      "id": 4,
-      "name": "The Peoples Chair!",
-      "type": "legs legslegslegslegslegslegslegslegs",
-      "description": "wall sits"
     }
   ],
   "routineExercises": [

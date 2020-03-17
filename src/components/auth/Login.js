@@ -26,7 +26,7 @@ const Login = props => {
                 const user = users.find(user => user.userName === credentials.userName)
 
                 sessionStorage.setItem(
-                    "Active Id", 
+                    "ActiveId", 
                     JSON.stringify(user.id)
                 )
                 props.setUser()

@@ -73,7 +73,7 @@ const ExerciseEditForm = props => {
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="type"
+              id="description"
               value={exercise.type}
             />
           </div>

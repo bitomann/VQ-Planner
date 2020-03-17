@@ -7,10 +7,10 @@ import './VgPlanner.css';
 // vvv essentially a factory function that returns an object;
 // vvv filled with JSX (HTML visual rep)
 const VqPlanner = () => {
-  const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
+  const isAuthenticated = () => sessionStorage.getItem("ActiveId") !== null;
   const [hasUser, setHasUser] = useState(isAuthenticated());
   const setUser = user => {
-    sessionStorage.setItem("credentials", JSON.stringify(user));
+    sessionStorage.getItem("ActiveId", JSON.stringify(user));
     setHasUser(isAuthenticated());
   };
 
