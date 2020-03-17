@@ -28,7 +28,9 @@ const ExerciseCard = props => {
         <button type="button" onClick={() => props.history.push(`/exercises/${props.exercise.id}/edit`)}>
         Edit
         </button>
-        <button type="button" onClick={() => props.deleteExercise(props.exercise.id)}>Delete</button>
+        <button type="button" onClick={() => props.deleteExercise(props.exercise.id)}>
+        Delete
+        </button>
       </div>
     </div>
   );

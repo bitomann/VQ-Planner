@@ -43,7 +43,7 @@ ApiManager.delete("exercises", props.exerciseId)
         <h5>Type: {firstLetterCase(exercise.type)}</h5>
         <h5>Description: {firstLetterCase(exercise.description)}</h5>
         {/* <Link> */}
-        <button type="button" onClick={() => props.history.push(`/exercises/${props.exercise.id}/edit`)}>
+        <button type="button" onClick={() => props.history.push(`/exercises/${props.exerciseId}/edit`)}>
         Edit
         </button>
         {/* </Link> */}

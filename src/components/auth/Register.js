@@ -40,7 +40,7 @@ const Register = (props) => {
                         const activeUser = users.find(user => user.userName === newUser.userName)
 
                         sessionStorage.setItem(
-                            "Active Id", 
+                            "ActiveId", 
                             JSON.stringify(activeUser.id)
                         )
 
