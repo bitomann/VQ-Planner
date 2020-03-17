@@ -1,13 +1,12 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import { withRouter, Link } from "react-router-dom";
 import './NavBar.css'
 
 const NavBar = props => {
-    // const activeUser = sessionStorage.getItem("Active Id")
-    const clearUser = () => {
-        sessionStorage.clear();
-    }
+    const handleLogout = () => {
+        props.clearUser();
+        props.history.push('/');
+      }
   
   return (
     <header>
@@ -18,14 +17,14 @@ const NavBar = props => {
               Home
             </Link>
           </li>
-          {/* {props.hasUser 
-            ? */}
+          {props.hasUser 
+            ? 
           <li>
             <Link className="nav-link" to="/exercises">
             Exercises
             </Link>
           </li>
-           {/* : null}  */}
+           : null}
           {props.hasUser
             ? 
           <li>
@@ -45,9 +44,9 @@ const NavBar = props => {
           {props.hasUser
             ?
           <li>
-            <Link className="nav-link" onClick={clearUser} to="/ ">
+            <span className="nav-link" onClick={handleLogout} to="/ ">
               Logout
-            </Link>
+            </span>
           </li>
           : null}
           <li>
@@ -61,5 +60,4 @@ const NavBar = props => {
   );
 };
 
-// export default NavBar;
 export default withRouter(NavBar);

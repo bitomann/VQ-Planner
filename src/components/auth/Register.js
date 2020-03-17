@@ -60,7 +60,7 @@ const Register = (props) => {
             <fieldset>
                 <h2>Register :</h2>
                 <div className="formgrid">
-                    <label htmlFor="inputUserName">F3 Name :</label>
+                    <label htmlFor="userName">F3 Name :</label>
                     <input onChange={handleFieldChange} type="userName" id="userName" 
                     placeholder="F3 Name..." required="" autoFocus="" className="padding"></input>
 

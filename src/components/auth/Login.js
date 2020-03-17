@@ -15,21 +15,23 @@ const Login = props => {
   const handleLogin = (evt) => {
     evt.preventDefault()
     if (credentials.userName === "" || credentials.password === "") {
-        window.alert("Please input a username and password")
+        window.alert("Please input your username and password")
     } else {
-        // Checks if the credentials entered by user in input fields matches any user objects in the DB, if so then saves that 
+        // Checks if the credentials entered by user in input fields 
+        // matches any user objects in the DB, if so then saves that 
         // user's id to sessionStorage and redirects back to home page.
         ApiManager.getAll("users").then(users => {
-            if (users.find(user => user.userName === credentials.userName) && users.find(user => user.password === credentials.password)) {                    
+            if (users.find(user => user.userName === credentials.userName)
+            && users.find(user => user.password === credentials.password)) {                    
                 const user = users.find(user => user.userName === credentials.userName)
 
                 sessionStorage.setItem(
                     "Active Id", 
                     JSON.stringify(user.id)
                 )
-                props.history.push("/home")
+                props.setUser()
+                props.history.push("/")
 
-                
             } else {
                 window.alert("Invalid userName or password.")
             }
@@ -44,19 +46,20 @@ const Login = props => {
         <h3>Please sign in :</h3>
         <div className="formgrid">
           <input onChange={handleFieldChange} type="text"
-            id="f3name"
+            id="userName"
             placeholder="F3 name..."
             required="" autoFocus="" />
-          <label htmlFor="inputF3name">F3 Name :</label>
+          <label htmlFor="userName">F3 Name :</label>
 
           <input onChange={handleFieldChange} type="password"
             id="password"
             placeholder="password"
             required="" />
-          <label htmlFor="inputPassword">Password :</label>
-          {/* TODO:add 'remember me' checkbox */}
-        </div>
+          <label htmlFor="password">Password :</label>
+          <input type="checkbox" id="rememberMe" name="rememberMe" value="rememberMe"/>
+            <label htmlFor="rememberMe">Remember Me :</label>       
         <button className="margin" color="success" type="submit" onClick={handleLogin}>Sign In</button>
+        </div>
         <p><Link className="center" to="/register">Don't have an account? Click Here To Register!</Link>
             </p>
       </fieldset>
