@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import setUser from "../vqPlanner/VqPlanner";
 import { firstLetterCase } from '../../modules/Helpers'
 import "./ExerciseCard.css";
 
 
 const ExerciseCard = props => {
-  
-    return (
+    const activeUser = parseInt(sessionStorage.getItem("ActiveId"))
+console.log(" Active ", activeUser)
+     return (
     <div className="card">
       <div className="card-content">
         <picture>
@@ -25,12 +27,16 @@ const ExerciseCard = props => {
         <Link to={`/exercises/${props.exercise.id}`}>
         <button>Details</button>
         </Link>
+        {activeUser === props.exercise.userId ? 
         <button type="button" onClick={() => props.history.push(`/exercises/${props.exercise.id}/edit`)}>
         Edit
         </button>
+        : null}
+        {activeUser === props.exercise.userId ?
         <button type="button" onClick={() => props.deleteExercise(props.exercise.id)}>
         Delete
         </button>
+        : null}
       </div>
     </div>
   );

@@ -65,7 +65,8 @@ export default {
             .then(response => response.json())
     },
     getAllWithUserNames(tableName) {
-        return fetch(`${remoteURL}/${tableName}?_expand=user`).then(result => result.json())
+        return fetch(`${remoteURL}/${tableName}?_expand=user`)
+            .then(result => result.json())
     },
     getUserData() {
         return fetch(`${remoteURL}/users`)
@@ -80,8 +81,8 @@ export default {
             body: JSON.stringify(user)
         }).then(results => results.json())
     },
-    checkUser(email, password) {
-        return fetch(`${remoteURL}/users?email=${email}&password=${password}`)
+    checkUser(userName, password) {
+        return fetch(`${remoteURL}/users?email=${userName}&password=${password}`)
             .then(response => response.json())
     },
     createRoutine(userId) {
