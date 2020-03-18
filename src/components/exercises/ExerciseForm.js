@@ -14,14 +14,35 @@ const ExerciseForm = props => {
 
   /*  Local method for validation, set loadingStatus, create exercise 
   object, invoke the ApiManager post method, and redirect to the full exercise list */
-  const constructNewExercise = evt => {
+//   const constructNewExercise = evt => {
+//     const userId = localStorage.getItem("credentials");
+
+//     evt.preventDefault();
+//     if (exercise.name === "" || exercise.type === "") {
+//       window.alert("Please input an Exercise Name, type, and Description");
+//     } else {
+//       setIsLoading(true);
+//       // Create the exercise and redirect user to exercise list to see all exercises including new one
+//       ApiManager.post("exercises", exercise)
+//         .then(() => props.history.push("/exercises"));
+//     }
+//   };
+
+const constructNewExercise = evt => {
     evt.preventDefault();
-    if (exercise.name === "" || exercise.type === "") {
-      window.alert("Please input an Exercise Name, type, and Description");
+    if (exercise.name === "" ) {
+      window.alert("Please name your exercise🤪");
     } else {
-      setIsLoading(true);
-      // Create the exercise and redirect user to exercise list to see all exercises including new one
-      ApiManager.post("exercises", exercise)
+    //         const stamp = new Date()
+    //   setIsLoading(true)
+      // Create the message and redirect user to Message list to see all Messages including new one
+      const newExercise = {
+        name: exercise.name,
+        type: exercise.type,
+        description: exercise.description,
+        userId: parseInt(sessionStorage.getItem("ActiveId"))
+      }
+      ApiManager.post("exercises", newExercise)
         .then(() => props.history.push("/exercises"));
     }
   };
@@ -55,7 +76,7 @@ const ExerciseForm = props => {
             <option value="legs">legs</option>
             <option value="fullBody">full body</option>
             </select>
-            
+
             <label htmlFor="type">Description :</label>
             <textarea rows="2" cols="50"
               type="textarea"
