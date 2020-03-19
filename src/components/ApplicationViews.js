@@ -4,8 +4,8 @@ import React from "react";
 import Home from "./home/Home";
 import Login from "../components/auth/Login";
 import Register from "./auth/Register";
+
 // vvv Exercises vvv //
-// import ExerciseCard from "./exercises/ExerciseCard";
 import ExerciseList from "./exercises/ExercisesList";
 import ExerciseDetail from "../components/exercises/ExerciseDetail";
 import ExerciseForm from "../components/exercises/ExerciseForm";
