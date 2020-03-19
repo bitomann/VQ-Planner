@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// vvv ExerciseCard data is pulled to populate the return vvv // 
 import ExerciseCard from './ExerciseCard';
 import ApiManager from '../../modules/ApiManager';
 

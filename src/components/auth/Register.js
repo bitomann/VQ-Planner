@@ -4,20 +4,19 @@ import { Link } from "react-router-dom"
 import ApiManager from "../../modules/ApiManager"
 import "../auth/Login.css"
 
-const Register = (props) => {
+const Register = props => {
     const [credentials, setCredentials] = useState({userName: "", password: "", confirmPassword: ""})
     const [isLoading, setIsLoading] = useState(false)
 
 
-    const handleFieldChange = (evt) => {
+    const handleFieldChange = evt => {
         const stateToChange = {...credentials}
         stateToChange[evt.target.id] = evt.target.value
         setCredentials(stateToChange)
     }
 
-    const handleRegister = (evt) => {
-        evt.preventDefault()
-
+    const handleRegister = evt => {
+            evt.preventDefault()
         if (credentials.userName === "" || credentials.password === "" || credentials.confirmPassword === "") {
             window.alert("Please input a F3 Name and Password.")
         } else if (credentials.password !== credentials.confirmPassword) {
@@ -43,8 +42,7 @@ const Register = (props) => {
                             "ActiveId", 
                             JSON.stringify(activeUser.id)
                         )
-
-                        props.history.push("/home")
+                        props.history.push("/")
                     })
                 })
                 }

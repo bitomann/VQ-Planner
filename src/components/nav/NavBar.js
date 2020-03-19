@@ -5,7 +5,7 @@ import './NavBar.css'
 const NavBar = props => {
     const handleLogout = () => {
         props.clearUser();
-        props.history.push('/');
+        props.history.push('/login');
       }
   
   return (
@@ -33,8 +33,7 @@ const NavBar = props => {
             {/* </Link> */}
           </li>
           : null}
-          {props.hasUser
-            ? 
+          {props.hasUser ? 
           <li>
             {/* <Link className="nav-link" to="/profiles"> */}
               Profile

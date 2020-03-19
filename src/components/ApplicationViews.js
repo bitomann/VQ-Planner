@@ -29,7 +29,7 @@ const ApplicationViews = props => {
     <>
     {/* Home */}
       <Route exact path="/" render={props => {
-        return <Home /> ;
+        return <Home />
     }}
       />
     {/* Register */}
