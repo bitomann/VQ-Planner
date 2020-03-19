@@ -42,7 +42,7 @@ const Register = props => {
                             "ActiveId", 
                             JSON.stringify(activeUser.id)
                         )
-                        props.history.push("/")
+                        props.history.push("/login")
                     })
                 })
                 }

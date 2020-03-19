@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ApiManager from '../../modules/ApiManager';
 import {firstLetterCase} from '../../modules/Helpers'
 import './ExerciseDetail.css'
+import { Link } from 'react-router-dom';
 
 const ExerciseDetail = props => {
   const [exercise, setExercise] = useState({ name: "", type: "", description: "" });
@@ -55,6 +56,9 @@ const activeUser = parseInt(sessionStorage.getItem("ActiveId"))
         Delete
         </button>
         : null}
+        <Link to={`/exercises`}>
+          <button>Back</button>
+        </Link>
       </div>
     </div>
   );
