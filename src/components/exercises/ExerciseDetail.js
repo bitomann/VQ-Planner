@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// import { Link } from "react-router-dom";
 import ApiManager from '../../modules/ApiManager';
-import './ExerciseDetail.css'
 import {firstLetterCase} from '../../modules/Helpers'
+import './ExerciseDetail.css'
 
 const ExerciseDetail = props => {
   const [exercise, setExercise] = useState({ name: "", type: "", description: "" });
@@ -19,18 +18,22 @@ ApiManager.delete("exercises", props.exerciseId)
 );
 };
 
-  useEffect(() => {
+useEffect(() => {
     //get(id) from ApiManager and hang on to the data; put it into state
     ApiManager.getOne("exercises", props.exerciseId)
-      .then(exercise => {
+    .then(exercise => {
         setExercise({
-          name: exercise.name,
-          type: exercise.type,
-          description: exercise.description
+            // name: exercise.name,
+            // type: exercise.type,
+            // description: exercise.description,
+            // userId: exercise.userId 
+            ...exercise
         });
         setIsLoading(false);
-      });
-  }, [props.exerciseId]);
+    });
+}, [props.exerciseId]);
+
+const activeUser = parseInt(sessionStorage.getItem("ActiveId"))
 
   return (
     <div className="card">
@@ -42,14 +45,16 @@ ApiManager.delete("exercises", props.exerciseId)
         <h3>Name: <span style={{ color: '#898989' }}>{firstLetterCase(exercise.name)}</span></h3>
         <h5>Type: {firstLetterCase(exercise.type)}</h5>
         <h5>Description: {firstLetterCase(exercise.description)}</h5>
-        {/* <Link> */}
+        {activeUser === exercise.userId ? 
         <button type="button" onClick={() => props.history.push(`/exercises/${props.exerciseId}/edit`)}>
         Edit
         </button>
-        {/* </Link> */}
+        : null}
+        {activeUser === exercise.userId ? 
         <button type="button" disabled={isLoading} onClick={handleDelete}>
         Delete
         </button>
+        : null}
       </div>
     </div>
   );

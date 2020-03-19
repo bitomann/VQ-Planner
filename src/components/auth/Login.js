@@ -13,9 +13,9 @@ const Login = props => {
  }
 
   const handleLogin = (evt) => {
-    evt.preventDefault()
+        evt.preventDefault()
     if (credentials.userName === "" || credentials.password === "") {
-        window.alert("Please input your username and password")
+        window.alert("Please input your F3 Name and Password")
     } else {
         // Checks if the credentials entered by user in input fields 
         // matches any user objects in the DB, if so then saves that 

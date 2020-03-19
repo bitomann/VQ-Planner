@@ -21,12 +21,12 @@
       "id": 4
     },
     {
-      "userName": "anaa",
-      "password": "12",
+      "userName": "poop",
+      "password": "1",
       "id": 5
     },
     {
-      "userName": "butt",
+      "userName": "dada",
       "password": "1",
       "id": 6
     }
@@ -66,6 +66,13 @@
       "type": "legs",
       "description": "",
       "id": 5
+    },
+    {
+      "id": 6,
+      "name": "EFWEDDDDDD!!",
+      "type": "arms",
+      "description": "3wefrwerfqerfwqerfwd2qes",
+      "userId": 5
     }
   ],
   "routineExercises": [

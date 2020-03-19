@@ -14,8 +14,9 @@ const ExerciseForm = props => {
 
   /*  Local method for validation, set loadingStatus, create exercise 
   object, invoke the ApiManager post method, and redirect to the full exercise list */
+
 //   const constructNewExercise = evt => {
-//     const userId = localStorage.getItem("credentials");
+    // const userId = localStorage.getItem("credentials");
 
 //     evt.preventDefault();
 //     if (exercise.name === "" || exercise.type === "") {
@@ -29,13 +30,15 @@ const ExerciseForm = props => {
 //   };
 
 const constructNewExercise = evt => {
+    // const userId = localStorage.getItem("credentials");
+
     evt.preventDefault();
     if (exercise.name === "" ) {
       window.alert("Please name your exercise🤪");
     } else {
     //         const stamp = new Date()
-    //   setIsLoading(true)
-      // Create the message and redirect user to Message list to see all Messages including new one
+      setIsLoading(true);
+      // Create the exercise and redirect user to exercise list to see all exercises including new one
       const newExercise = {
         name: exercise.name,
         type: exercise.type,

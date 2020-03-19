@@ -21,7 +21,8 @@ const ExerciseEditForm = props => {
       id: props.match.params.exerciseId,
       name: exercise.name,
       type: exercise.type,
-      description: exercise.description
+      description: exercise.description,
+      userId: parseInt(sessionStorage.getItem("ActiveId"))
     };
 
     ApiManager.update("exercises", editedExercise)
@@ -74,7 +75,7 @@ const ExerciseEditForm = props => {
               className="form-control"
               onChange={handleFieldChange}
               id="description"
-              value={exercise.type}
+              value={exercise.description}
             />
           </div>
           <div className="alignRight">

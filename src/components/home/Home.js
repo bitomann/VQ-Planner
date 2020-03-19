@@ -5,7 +5,10 @@ const Home = () => {
     return (
         <div className="center">
             <h1 className="centerMe">VQ-Planner</h1>
-            {/* <img src={require("../images/f3-logo.png")} alt="f3 logo"></img> */}
+            <section>
+            <img id="dice" src={require("../images/cross-hair-dice.png")} alt="f3 logo"></img>
+            <label id="randomQ" >Random VQ</label>
+            </section>
         </div>
     )
 }

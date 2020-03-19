@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import setUser from "../vqPlanner/VqPlanner";
 import { firstLetterCase } from '../../modules/Helpers'
 import "./ExerciseCard.css";
 
 
 const ExerciseCard = props => {
     const activeUser = parseInt(sessionStorage.getItem("ActiveId"))
-console.log(" Active ", activeUser)
-     return (
+
+    return (
     <div className="card">
       <div className="card-content">
         <picture>

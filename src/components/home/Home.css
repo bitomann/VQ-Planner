@@ -13,6 +13,12 @@ body {
   z-index: -1;
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .centerMe {
     color: #c9c9c9;
     font-size: 60px;
