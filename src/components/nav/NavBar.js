@@ -12,14 +12,13 @@ const NavBar = props => {
     <header>
       <nav>
         <ul className="container">
-          <li>
+          <li id="logo">
             <Link className="nav-link" to="/">
-              Home
-            </Link>
+            <img src={require(`../images/f3_horz_logo-500px.png`)} id="f3nation" alt="F3 Nation" />            </Link>
           </li>
           {props.hasUser 
             ? 
-          <li>
+          <li class="textLink">
             <Link className="nav-link" to="/exercises">
             Exercises
             </Link>
@@ -27,14 +26,14 @@ const NavBar = props => {
            : null}
           {props.hasUser
             ? 
-          <li>
+          <li class="textLink">
             {/* <Link className="nav-link" to="/routines"> */}
               Routines
             {/* </Link> */}
           </li>
           : null}
           {props.hasUser ? 
-          <li>
+          <li class="textLink">
             {/* <Link className="nav-link" to="/profiles"> */}
               Profile
             {/* </Link> */}
