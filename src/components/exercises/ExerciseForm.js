@@ -81,8 +81,7 @@ const constructNewExercise = evt => {
             </select>
 
             <label htmlFor="type">Description :</label>
-            <textarea rows="2" cols="50"
-              type="textarea"
+            <textarea 
               required
               onChange={handleFieldChange}
               id="description"

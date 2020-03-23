@@ -20,7 +20,7 @@ const Login = props => {
         // Checks if the credentials entered by user in input fields 
         // matches any user objects in the DB, if so then saves that 
         // user's id to sessionStorage and redirects back to home page.
-        ApiManager.getAll("users").then(users => {
+        ApiManager.checkUser(credentials.userName, credentials.password).then(users => {
             if (users.find(user => user.userName === credentials.userName)
             && users.find(user => user.password === credentials.password)) {                    
                 const user = users.find(user => user.userName === credentials.userName)
@@ -56,8 +56,8 @@ const Login = props => {
             placeholder="password"
             required="" />
           <label htmlFor="password">Password :</label>
-          <input type="checkbox" id="rememberMe" name="rememberMe" value="rememberMe"/>
-            <label htmlFor="rememberMe">Remember Me :</label>       
+          {/* <input type="checkbox" id="rememberMe" name="rememberMe" value="rememberMe"/>
+            <label htmlFor="rememberMe">Remember Me :</label>        */}
         <button className="margin" color="success" type="submit" onClick={handleLogin}>Sign In</button>
         </div>
         <p><Link className="center" to="/register">Don't have an account? Click Here To Register!</Link>

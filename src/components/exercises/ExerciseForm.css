@@ -50,7 +50,7 @@ fieldset .formgrid {
     align-items: center;
 }
 
-fieldset input, fieldset button, fieldset select {
+fieldset input, fieldset button, fieldset select, fieldset textarea {
     grid-column: 2 /4;
     width: auto;
     margin: 0
