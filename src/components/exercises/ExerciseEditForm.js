@@ -53,7 +53,7 @@ const ExerciseEditForm = props => {
             />
 
             <label htmlFor="type">Type :</label>
-            <select value="updateExistingExercise"
+            <select value={exercise.type}
               required
               onChange={handleFieldChange}
               id="type"
@@ -64,7 +64,7 @@ const ExerciseEditForm = props => {
             <option value="shoulders">shoulders</option>
             <option value="arms">arms</option>
             <option value="legs">legs</option>
-            <option value="mary" >Mary</option>
+            <option value="mary" >mary</option>
             <option value="fullBody">full body</option>
             </select>
 

@@ -55,7 +55,7 @@
     {
       "id": 1,
       "name": "Merkins",
-      "type": "mary",
+      "type": "chest",
       "description": "The definition of a push-up is an exercise done laying with face, palms and toes facing down, keeping legs and back straight, extending arms straight to push body up and back down again. An example of a push-up is a great exercise that works the chest, shoulder and arm muscles.",
       "userId": 2
     },
@@ -63,14 +63,14 @@
       "id": 2,
       "userId": 1,
       "name": "American Hammer",
-      "type": "Mary",
+      "type": "mary",
       "description": "A more appropriate name for the former Russian Twist. Rocky did beat the Russian in the movie. Sounds tougher too..."
     },
     {
       "id": 3,
       "userId": 1,
       "name": "Sumo Squat",
-      "type": "Legs",
+      "type": "legs",
       "description": "Feet in wide stance (like a sumo wrestler), squat down and touch ground with both hands. For added fun can add sumo sounds and sumo leg lift between each rep. Also done by some groups as a jump squat with the same touch of the ground."
     },
     {
