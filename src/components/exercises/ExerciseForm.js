@@ -41,7 +41,6 @@ const constructNewExercise = evt => {
       <form>
         <fieldset>
           <div className="formgrid">
-            <label htmlFor="exerciseName">Name :</label>
             <input
               type="text"
               required
@@ -49,8 +48,8 @@ const constructNewExercise = evt => {
               id="name"
               placeholder="exercise name"
             />
+            <label htmlFor="exerciseName">Name :</label>
             
-            <label htmlFor="type">Type :</label>
             <select
               type="text"
               required
@@ -65,14 +64,15 @@ const constructNewExercise = evt => {
             <option value="legs">legs</option>
             <option value="fullBody">full body</option>
             </select>
+            <label htmlFor="type">Type :</label>
 
-            <label htmlFor="type">Description :</label>
-            <textarea rows="2"
+            <textarea 
               required
               onChange={handleFieldChange}
               id="description"
               placeholder="description"
             />
+            <label htmlFor="type">Description :</label>
           </div>
           <div className="alignRight">
           <Link to={`/exercises`}>

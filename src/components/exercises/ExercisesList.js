@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ExerciseCard from './ExerciseCard';
 import ApiManager from '../../modules/ApiManager';
+import "./ExerciseList.css"
 
 const ExerciseList = props => {
 // The empty array passed to useState is the initial value of the state.

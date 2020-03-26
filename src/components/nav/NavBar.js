@@ -24,21 +24,21 @@ const NavBar = props => {
             </Link>
           </li>
            : null}
-          {props.hasUser
+          {/* {props.hasUser
             ? 
-          <li class="textLink">
-            {/* <Link className="nav-link" to="/routines"> */}
+          <li>
+            <Link className="nav-link" to="/routines">
               Routines
-            {/* </Link> */}
+            </Link>
           </li>
-          : null}
-          {props.hasUser ? 
-          <li class="textLink">
-            {/* <Link className="nav-link" to="/profiles"> */}
+          : null} */}
+          {/* {props.hasUser ? 
+          <li>
+            <Link className="nav-link" to="/profiles">
               Profile
-            {/* </Link> */}
+            </Link>
           </li>
-          : null} 
+          : null}  */}
           {/* vvv IMPORTANT: conditional rendering with a ternary: if something is true do x if something is false do y
           works with booleans. Whatever comes after the ? happens whatever comes after the : doesn't happen vvv */}
           {props.hasUser ? <li> <span className="nav-link" onClick={handleLogout} to="/ "> Logout </span> </li>: null}

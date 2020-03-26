@@ -10,12 +10,12 @@ const ExerciseCard = props => {
     return (
     <div className="card">
       <div className="card-content">
-        <picture>
+        {/* <picture> */}
           {/* vvv this follows the path to the "imageUrl" in the JSON file. path needs to be from the 
           same level as the folder. In turn renders a unique image on each card vvv */}
           {/* <img src={require(`./dogImages/${props.exercise.imageUrl}`)} alt="My Dog" /> */}
-          <img src={require(`../images/muscle-icon.svg`)} alt="Flexing Arm" />
-        </picture>
+          {/* <img src={require(`../images/muscle-icon.svg`)} alt="Flexing Arm" /> */}
+        {/* </picture> */}
         {/* vvv pulls in props from ExerciseList vvv */}
         <h3 className="name">Name: <span className="card-exerciseName">
           {firstLetterCase(props.exercise.name)}
