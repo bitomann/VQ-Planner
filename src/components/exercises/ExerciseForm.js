@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ApiManager from '../../modules/ApiManager';
 import './ExerciseForm.css'
 
@@ -12,23 +13,8 @@ const ExerciseForm = props => {
     setExercise(stateToChange);
   };
 
-  /*  Local method for validation, set loadingStatus, create exercise 
-  object, invoke the ApiManager post method, and redirect to the full exercise list */
-
-//   const constructNewExercise = evt => {
-    // const userId = localStorage.getItem("credentials");
-
-//     evt.preventDefault();
-//     if (exercise.name === "" || exercise.type === "") {
-//       window.alert("Please input an Exercise Name, type, and Description");
-//     } else {
-//       setIsLoading(true);
-//       // Create the exercise and redirect user to exercise list to see all exercises including new one
-//       ApiManager.post("exercises", exercise)
-//         .then(() => props.history.push("/exercises"));
-//     }
-//   };
-
+  /*  Local method for validation, set loadingStatus, create exercise object, 
+  invoke the ApiManager post method, and redirect to the full exercise list */
 const constructNewExercise = evt => {
     // const userId = localStorage.getItem("credentials");
 
@@ -89,6 +75,9 @@ const constructNewExercise = evt => {
             <label htmlFor="type">Description :</label>
           </div>
           <div className="alignRight">
+          <Link to={`/exercises`}>
+          <button>Cancel</button>
+        </Link>
             <button
               type="button"
               disabled={isLoading}
@@ -97,6 +86,9 @@ const constructNewExercise = evt => {
           </div>
         </fieldset>
       </form>
+      <Link to={`/exercises`}>
+          <button>Cancel</button>
+        </Link>
     </>
   );
 };

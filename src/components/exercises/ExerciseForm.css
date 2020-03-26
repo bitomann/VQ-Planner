@@ -68,3 +68,8 @@ fieldset input, fieldset button, fieldset select, fieldset textarea {
 fieldset .alignRight {
     text-align: right;
 }
+
+/* fieldset textarea {
+    width: 366px;
+} */
+

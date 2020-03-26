@@ -40,12 +40,14 @@ const activeUser = parseInt(sessionStorage.getItem("ActiveId"))
     <div className="card">
       <div className="card-content">
         <picture>
-          {/* <img src={require(`./dogImages/${exercise.description}`)} alt="My Dog" /> */}
           <img src={require(`../images/muscle-icon.svg`)} alt="My Dog" />
         </picture>
         <h3>Name: <span style={{ color: '#898989' }}>{firstLetterCase(exercise.name)}</span></h3>
         <h5>Type: {firstLetterCase(exercise.type)}</h5>
         <h5>Description: {firstLetterCase(exercise.description)}</h5>
+        <Link to={`/exercises`}>
+          <button>Back</button>
+        </Link>
         {activeUser === exercise.userId ? 
         <button type="button" onClick={() => props.history.push(`/exercises/${props.exerciseId}/edit`)}>
         Edit
@@ -56,9 +58,6 @@ const activeUser = parseInt(sessionStorage.getItem("ActiveId"))
         Delete
         </button>
         : null}
-        <Link to={`/exercises`}>
-          <button>Back</button>
-        </Link>
       </div>
     </div>
   );

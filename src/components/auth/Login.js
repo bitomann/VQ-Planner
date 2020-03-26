@@ -27,6 +27,7 @@ const Login = props => {
             ) {                    
                 const user = users.find(user => user.userName === credentials.userName)
 
+                // vvv setItem() method sets the value of "ActiveId".
                 sessionStorage.setItem(
                     "ActiveId", 
                     JSON.stringify(user.id)
