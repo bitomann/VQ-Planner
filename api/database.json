@@ -49,6 +49,10 @@
       "userName": "andy",
       "password": "123",
       "id": 10
+    },
+    {
+      "userName": "bito2",
+      "id": 11
     }
   ],
   "exercises": [
@@ -56,7 +60,7 @@
       "id": 1,
       "name": "Merkins",
       "type": "chest",
-      "description": "The definition of a push-up is an exercise done laying with face, palms and toes facing down, keeping legs and back straight, extending arms straight to push body up and back down again. An example of a push-up is a great exercise that works the chest, shoulder and arm muscles.",
+      "description": "It's a push-up by a different name.",
       "userId": 2
     },
     {
@@ -100,6 +104,13 @@
       "type": "legs",
       "description": "run run run!!",
       "userId": 10
+    },
+    {
+      "name": "Burpees",
+      "type": "fullBody",
+      "description": "Push ups combined with squat jumps...essentially ",
+      "userId": 11,
+      "id": 8
     }
   ],
   "routineExercises": [

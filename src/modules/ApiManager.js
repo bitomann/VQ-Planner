@@ -82,7 +82,11 @@ export default {
         }).then(results => results.json())
     },
     checkUser(userName, password) {
-        return fetch(`${remoteURL}/users?email=${userName}&password=${password}`)
+        return fetch(`${remoteURL}/users?userName=${userName}&password=${password}`)
+            .then(response => response.json())
+    },
+    checkUserName(userName) {
+        return fetch(`${remoteURL}/users?userName=${userName}`)
             .then(response => response.json())
     },
     createRoutine(userId) {
