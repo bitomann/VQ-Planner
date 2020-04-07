@@ -53,50 +53,41 @@
     {
       "userName": "bito2",
       "id": 11
+    },
+    {
+      "userName": "hello",
+      "id": 12
+    },
+    {
+      "userName": "lulu",
+      "id": 13
+    },
+    {
+      "userName": "Phoenix",
+      "id": 14
     }
   ],
   "exercises": [
     {
       "id": 1,
-      "name": "Merkins",
+      "name": "Push Ups",
       "type": "chest",
-      "description": "It's a push-up by a different name.",
+      "description": "Start in a high plank position. Lower your body. Push back up",
       "userId": 2
     },
     {
       "id": 2,
-      "userId": 1,
       "name": "American Hammer",
-      "type": "mary",
-      "description": "A more appropriate name for the former Russian Twist. Rocky did beat the Russian in the movie. Sounds tougher too..."
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "name": "Sumo Squat",
-      "type": "legs",
-      "description": "Feet in wide stance (like a sumo wrestler), squat down and touch ground with both hands. For added fun can add sumo sounds and sumo leg lift between each rep. Also done by some groups as a jump squat with the same touch of the ground."
+      "type": "core",
+      "description": "A more appropriate name for the former Russian Twist. Rocky did beat the Russian in the movie. Sounds tougher too...",
+      "userId": 1
     },
     {
       "userId": 1,
       "name": "Shoulder Press",
       "type": "shoulders",
-      "description": "Yup",
+      "description": "Hold the dumbbells by your shoulders with your palms facing forwards and your elbows out to the sides and bent at a 90° angle. Without leaning back, extend through your elbows to press the weights above your head. Then slowly return to the starting position.",
       "id": 4
-    },
-    {
-      "userId": 1,
-      "name": "Hip Thrusters",
-      "type": "legs",
-      "description": "",
-      "id": 5
-    },
-    {
-      "id": 6,
-      "name": "EFWEDDDDDD!!",
-      "type": "arms",
-      "description": "3wefrwerfqerfwqerfwd2qes",
-      "userId": 5
     },
     {
       "id": 7,
@@ -111,6 +102,13 @@
       "description": "Push ups combined with squat jumps...essentially ",
       "userId": 11,
       "id": 8
+    },
+    {
+      "id": 9,
+      "name": "Battle Ropes",
+      "type": "shoulders",
+      "description": "Whip ropes",
+      "userId": 1
     }
   ],
   "routineExercises": [
@@ -123,11 +121,6 @@
       "id": 2,
       "exerciseId": 2,
       "routineId": 2
-    },
-    {
-      "id": 4,
-      "exerciseId": 3,
-      "routineId": 3
     }
   ],
   "routines": [

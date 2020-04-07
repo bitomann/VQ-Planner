@@ -81,7 +81,7 @@ export default {
             body: JSON.stringify(user)
         }).then(results => results.json())
     },
-    checkUser(userName, password) {
+    checkUserWithPassword(userName, password) {
         return fetch(`${remoteURL}/users?userName=${userName}&password=${password}`)
             .then(response => response.json())
     },
@@ -102,8 +102,8 @@ export default {
         return fetch(`${remoteURL}/routines?userId=${userId}`, {
         }).then(results => results.json())
     },
-    getLoggedInUserSavedExercisesList(routineId){
-        return fetch (`${remoteURL}/savedExercises?_expand=exercise&_expand=routine&routineId=${routineId}`)
+    getLoggedInUserSavedRoutine(routineId){
+        return fetch (`${remoteURL}/routineExercises?_expand=exercise&_expand=routine&routineId=${routineId}`)
         .then(results => results.json())
     }
     

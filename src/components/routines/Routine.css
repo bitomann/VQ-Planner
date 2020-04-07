@@ -1,0 +1,82 @@
+/* Import the google web fonts you want to use */
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
+div.card-content {
+  color: black;
+  max-width: 40em;
+  padding: 4px;
+  margin: 2em auto;
+  border: 0 none;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  background: #1b1b1b;
+  opacity: 88%;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  color: #424242;
+  font-family: "Comfortaa", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+h3, h5 {
+    font-family: 'Stardos Stencil', cursive;
+    /* font-family: 'Allerta Stencil', sans-serif; */
+    letter-spacing: 2px;
+    color: whitesmoke
+}
+
+p {
+  margin-bottom: 1.5em;
+  color: #d6fcff;
+  color: rgb(33, 33, 37);
+}
+
+strong {
+  font-weight: bold;
+}
+
+.name {
+  margin: 0 0 1.5em;
+}
+
+img {
+  display: block;
+  padding: 0.5%;
+  border: 0;
+  width: 15%;
+  height: auto;
+}
+
+.section-content {
+  padding: 1.4em;
+}
+
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+button {
+  max-width: 9em;
+  padding: .5em;
+  margin: .3em auto;
+  background-color: #424242;
+  border: none;
+  color: #c9c9c9;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 2px;
+  width: 100%;
+  cursor: pointer;
+  /* width: 88px; */
+}

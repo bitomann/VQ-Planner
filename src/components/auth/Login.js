@@ -33,7 +33,7 @@ const Login = props => {
                     JSON.stringify(user.id)
                 )
                 props.setUser()
-                props.history.push("/")
+                props.history.push("/exercises")
 
             } else {
                 window.alert("Invalid userName")

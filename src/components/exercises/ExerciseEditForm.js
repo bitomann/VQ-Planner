@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ApiManager from "../../modules/ApiManager";
+import { Link } from 'react-router-dom';
 import "../exercises/ExerciseForm.css";
 
 const ExerciseEditForm = props => {
@@ -64,7 +65,7 @@ const ExerciseEditForm = props => {
             <option value="shoulders">shoulders</option>
             <option value="arms">arms</option>
             <option value="legs">legs</option>
-            <option value="mary" >mary</option>
+            <option value="core">core</option>
             <option value="fullBody">full body</option>
             </select>
 
@@ -78,6 +79,9 @@ const ExerciseEditForm = props => {
             />
           </div>
           <div className="alignRight">
+          <Link to={`/exercises`}>
+          <button>Cancel</button>
+        </Link>
             <button
               type="button" disabled={isLoading}
               onClick={updateExistingExercise}
