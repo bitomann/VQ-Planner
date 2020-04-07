@@ -12,7 +12,7 @@ import ExerciseForm from "../components/exercises/ExerciseForm";
 import ExerciseEditForm from "../components/exercises/ExerciseEditForm";
 
 // vvv Routines vvv //
-// import RoutineList from "../components/Routine/RoutineList";
+// import Routine from "./routines/Routine";
 
 // vvv Profiles vvv //
 // import ProfileList from "../components/profile/ProfileList";
@@ -74,15 +74,15 @@ const ApplicationViews = props => {
       />
 
       {/* Routines */}
-      {/* <Route exact path="/routines" render={props => {
+       {/* <Route exact path="/routines" render={props => {
         if (hasUser) {
-        return <RoutineList {...props} />
+        return <Routine {...props} />
         } else {
         return <Redirect to="/login" />
     }
     }}
-      />
-      <Route path="/routines/:routineId(\d+)/edit" render={props => {
+      /> */}
+     {/* <Route path="/routines/:routineId(\d+)/edit" render={props => {
         if (hasUser) {
         return <RoutineEditForm {...props} />
       } else {

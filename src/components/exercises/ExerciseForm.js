@@ -3,6 +3,41 @@ import { Link } from 'react-router-dom';
 import ApiManager from '../../modules/ApiManager';
 import './ExerciseForm.css'
 
+// const arrayOfTypes = [
+//   {
+//     id: '1 - select...',
+//     name: 'select...'    
+//   },
+//   {
+//     id: '2 - chest',
+//     name: 'chest'    
+//   },
+//   {
+//     id: '3 - back',
+//     name: 'back'    
+//   },
+//   {
+//     id: '4 - shoulders',
+//     name: 'shoulders'    
+//   },
+//   {
+//     id: '5 - arms',
+//     name: 'arms'    
+//   },
+//   {
+//     id: '6 - legs',
+//     name: 'legs'    
+//   },
+//   {
+//     id: '7 - core',
+//     name: 'core'    
+//   },
+//   {
+//     id: '8 - fullBody',
+//     name: 'full Body'    
+//   },
+// ];
+
 const ExerciseForm = props => {
   const [exercise, setExercise] = useState({ name: "", type: "", description: "" });
   const [isLoading, setIsLoading] = useState(false);
@@ -51,17 +86,17 @@ const constructNewExercise = evt => {
             <label htmlFor="exerciseName">Name :</label>
             
             <select
-              type="text"
-              required
               onChange={handleFieldChange}
               id="type"
               placeholder="type"
             > 
+            <option value="select">select...</option>
             <option value="chest">chest</option>
             <option value="back">back</option>
             <option value="shoulders">shoulders</option>
             <option value="arms">arms</option>
             <option value="legs">legs</option>
+            <option value="core">core</option>
             <option value="fullBody">full body</option>
             </select>
             <label htmlFor="type">Type :</label>
@@ -86,9 +121,6 @@ const constructNewExercise = evt => {
           </div>
         </fieldset>
       </form>
-      <Link to={`/exercises`}>
-          <button>Cancel</button>
-        </Link>
     </>
   );
 };
